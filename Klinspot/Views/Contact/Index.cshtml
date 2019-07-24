@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml");
+}
+
+<!-- Start: contact  Section
+==================================================-->
+<section class="contact-page">
+    <div class="container">
+        <!-- Start: Heading -->
+        <div class="base-header">
+            <h3>Send us <span class="ylow_clr">Message</span></h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Phasellus id lectus quis dui euismod con placerat massa nec elit egestas efficitur.  </p>
+        </div>
+        <!-- End:  heading -->
+        <div class="row">
+            <div class="col-lg-8 col-xs-12 inner-contact">
+                <!--  Contact Form  -->
+                <div class="contact-form">
+                    <form method="post" action="http://ttheme.website/tidytheme/klinspot/mailer.php" id="contact-form">
+                        <div class="row">
+                            <div class="col-lg-6 col-xs-12">
+                                <input class="con-field" name="name" id="name" type="text" placeholder="Name">
+                            </div>
+                            <div class="col-lg-6 col-xs-12">
+                                <input class="con-field" name="email" id="email" type="text" placeholder="Email">
+                            </div>
+                            <div class="col-lg-6 col-xs-12">
+                                <input class="con-field" name="messageForm" id="messageForm" type="text" placeholder="Subject">
+                            </div>
+                            <div class="col-lg-6 col-xs-12">
+                                <input class="con-field" name="phone" id="phone" type="text" placeholder="Phone">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-xs-12">
+                                <textarea class="con-field" name="message" id="message" rows="6" placeholder="Your Message"></textarea>
+                                <div class="submit-area">
+                                    <input type="submit" id="submit-contact" class="btn-alt" value="Send Message">
+                                    <div id="msg" class="message"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End:Contact Form  -->
+            </div>
+            <div class="col-lg-4 col-xs-12">
+                <div class="contact_pg_address">
+                    <h3>Hello there <br>got a project?</h3>
+                    <div class="single_con_add">
+                        <a href="#"><i class="icon-glyph-226"></i></a>
+                        <p><span>Company Address :</span>
+                        <p>
+                            <span>3567 New Alaska, us</span>
+                        </p>
+                    </div>
+                    <div class="single_con_add">
+                        <a href="#"><i class="icon-glyph-334"></i></a>
+                        <p><span>Email Address :</span>
+                        <p>
+                            <span>example@email .com</span>
+                        </p>
+                    </div>
+                    <div class="single_con_add">
+                        <a href="#"><i class="icon-glyph-33"></i></a>
+                        <p><span>Contact Us :</span>
+                        <p>
+                            <span>+77-00-222-1111</span>
+                        </p>
+                    </div>
+
+                    <div class="contact_pg_icon">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End:Content  -->
+        <div class="row">
+            <div class="col-lg-12 col-xs-12">
+                <!-- Google Map -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.023938894304!2d-81.38341548467582!3d19.324767486945657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f2587a9a0b98737%3A0x38fe616bb6df631f!2s638+W+Bay+Rd%2C+Cayman+Islands!5e0!3m2!1sen!2sus!4v1549260798680" height="450" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- container /- -->
+</section>
+<!--End Contact Section
+==================================================-->
