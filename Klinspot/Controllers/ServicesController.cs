@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Klinspot.Controllers
 {
-    public class ServicesController : Controller
+    public class ServicesController : BaseController
     {
         // GET: Services
         public ActionResult Index()

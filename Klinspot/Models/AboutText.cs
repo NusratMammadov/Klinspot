@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Klinspot.Models
 {
@@ -9,13 +10,10 @@ namespace Klinspot.Models
         [Required,MaxLength(100)]
         public string Title { get; set; }
 
-        [MaxLength(100)]
-        public string PhotoLarge { get; set; }
+        [Column(TypeName ="ntext")]
+        public string Text { get; set; }
 
         [MaxLength(100)]
-        public string PhotoRightTop { get; set; }
-
-        [MaxLength(100)]
-        public string PhotoRightBottom { get; set; }
+        public string Photo { get; set; }
     }
 }

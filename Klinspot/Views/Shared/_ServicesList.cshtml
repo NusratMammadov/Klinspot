@@ -1,4 +1,5 @@
-﻿<!-- Start:Our Services Section
+﻿@model List<Service>
+<!-- Start:Our Services Section
 ==================================================-->
 <section class="service-section">
     <div class="container">
@@ -9,79 +10,23 @@
         </div>
         <!-- End: Heading -->
         <div class="row timeline_posts">
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon1.png" alt="image">
+            @foreach (var service in Model)
+            {
+                <div class="col-md-4 col-xs-12">
+                    <!-- about-item -->
+                    <div class="service-item">
+                        <div class="icon-serv">
+                            <img src="~/Uploads/@service.Icon" alt="@service.Name">
+                        </div>
+                        <h5 class="serv-left">@service.Name</h5>
+                        <div class="serv-info">@service.Desc</div>
+                        <a href="@Url.Action("details","services",new { slug=service.Slug })">
+                            <span class="serv-learn">More</span><i class="arrow_right"></i>
+                        </a>
                     </div>
-                    <h5 class="serv-left">Constraction Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business</div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
+                    <!-- End: .about-item -->
                 </div>
-                <!-- End: .about-item -->
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon3.png" alt="image">
-                    </div>
-                    <h5 class="serv-left">Commercial Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business </div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
-                </div>
-                <!-- End: .about-item -->
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon4.png" alt="image">
-                    </div>
-                    <h5 class="serv-left">Living Area Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business</div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
-                </div>
-                <!-- End: .about-item -->
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon2.png" alt="image">
-                    </div>
-                    <h5 class="serv-left">Residential Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business </div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
-                </div>
-                <!-- End: .about-item -->
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon5.png" alt="image">
-                    </div>
-                    <h5 class="serv-left">Spring Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business</div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
-                </div>
-
-                <!-- End: .about-item -->
-            </div>
-            <div class="col-md-4 col-xs-12">
-                <!-- about-item -->
-                <div class="service-item">
-                    <div class="icon-serv">
-                        <img src="~/Public/images/promo_icon6.png" alt="image">
-                    </div>
-                    <h5 class="serv-left">Office Cleaning</h5>
-                    <div class="serv-info">The purpose of writing a business is to actually research and find out more about the business</div>
-                    <span class="serv-learn">More</span><i class="arrow_right"></i>
-                </div>
-                <!-- End: .about-item -->
-            </div>
+            }
         </div>
         <!-- /. row -->
     </div>

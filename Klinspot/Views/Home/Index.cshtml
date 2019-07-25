@@ -1,4 +1,4 @@
-﻿
+﻿@model Homepage
 @{
     ViewBag.Title = "Index";
 }
@@ -7,47 +7,30 @@
 <!-- Start: Slides  -->
 <div class="slides_wrapper">
     <div class="slider_home">
-        <div class="single_slider slide_bg_1">
-            <div class="slider_item_tb">
-                <div class="slider_item_tbcell">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-7 col-xs-12">
-                                <h2>
-                                    <span> klinspot -</span> <span class="slide_st1">
-                                        We can make your place clean
-                                    </span>
-                                </h2>
-                                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonmy ni euism laoreet dolore magna aliquam erat volutpat consectetuer.</p>
-                                <div class="slider_btn">
-                                    <a href="contact.html" class="more-link slider_btn_one">Read more</a>
-                                    <a href="contact.html" class="more-link slider_btn_two">Get started</a>
+        @foreach (var slide in Model.Slides)
+        {
+            <div class="single_slider slide_bg_2" style="background-image:url('/Uploads/@slide.Photo')">
+                <div class="slider_item_tb">
+                    <div class="slider_item_tbcell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-7 col-xs-12">
+                                    <h2><span class="slide_st1">@slide.Title</span></h2>
+                                    <p>@slide.Desc</p>
+                                    @if (!string.IsNullOrEmpty(slide.BtnText))
+                                    {
+                                        <div class="slider_btn">
+                                            <a href="@slide.BtnUrl" class="more-link slider_btn_one">@slide.BtnText</a>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        }
 
-        <div class="single_slider slide_bg_2">
-            <div class="slider_item_tb">
-                <div class="slider_item_tbcell">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-7 col-xs-12">
-                                <h2><span> klinspot - </span> <span class="slide_st1"> Expert In cleaning Service   </span></h2>
-                                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonmy ni euism laoreet dolore magna aliquam erat volutpat consectetuer adipiscing elit.</p>
-                                <div class="slider_btn">
-                                    <a href="contact.html" class="more-link slider_btn_one">Read more</a>
-                                    <a href="contact.html" class="more-link slider_btn_two">Get started</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <!-- End:  slider
@@ -58,39 +41,20 @@
     <div class="container">
         <div class="promo-container">
             <div class="row">
-                <div class="col-md-4 col-sm-4 ">
-                    <div class="promo-wrap">
-                        <div class="promo-icon">
-                            <img src="~/Public/images/promo_icon1.png" alt="image">
-                        </div>
-                        <div class="promo-content">
-                            <h4>Home Cleaning</h4>
-                            <p>The purpose of writing a business is to actually research and find out more about the business</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="promo-wrap promo_border">
-                        <div class="promo-icon">
-                            <img src="~/Public/images/promo_icon3.png" alt="image">
-                        </div>
-                        <div class="promo-content">
-                            <h4>Floor Cleaning</h4>
-                            <p>The purpose of writing a business is to actually research and find out more about the business</p>
+                @foreach (var prm in Model.Promos)
+                {
+                    <div class="col-md-4 col-sm-4 ">
+                        <div class="promo-wrap">
+                            <div class="promo-icon">
+                                <img src="~/Uploads/@prm.Icon" alt="@prm.Name">
+                            </div>
+                            <div class="promo-content">
+                                <h4>@prm.Name</h4>
+                                <p>@prm.Desc</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="promo-wrap">
-                        <div class="promo-icon">
-                            <img src="~/Public/images/promo_icon2.png" alt="image">
-                        </div>
-                        <div class="promo-content">
-                            <h4>Pool cleaning</h4>
-                            <p>The purpose of writing a business is to actually research and find out more about the business</p>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>
@@ -99,8 +63,8 @@
 ==================================================-->
 
 @{
-    Html.RenderPartial("~/Views/Shared/_AboutText.cshtml");
-    Html.RenderPartial("~/Views/Shared/_ServicesList.cshtml");
+    Html.RenderPartial("~/Views/Shared/_AboutText.cshtml",model:Model.AboutText);
+    Html.RenderPartial("~/Views/Shared/_ServicesList.cshtml",model:Model.Services);
 }
 
 <!-- Start: Choose Us Section
@@ -112,7 +76,7 @@
                 <div class="video_wrp">
                     <h3>Find Out All Cleaning Service We Offer.</h3>
                     <h4>Get Your Quote or Call: (0050) 123-356-689</h4>
-                    <div class="animated_play_btn"><i class="fa fa-play"></i></div>
+                    <a href="@ViewBag.Setting.VideoUrl" class="animated_play_btn"><i class="fa fa-play"></i></a>
                 </div>
             </div>
             <!-- /.chooseus-warper-->

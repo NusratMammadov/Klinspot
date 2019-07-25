@@ -32,6 +32,9 @@ namespace Klinspot.Models
         [MaxLength(100)]
         public string Doc { get; set; }
 
+        [MaxLength(100)]
+        public string Desc { get; set; }
+
         [Column(TypeName ="ntext")]
         public string Text { get; set; }
     }

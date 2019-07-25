@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    List<SocialLink> socialLinks = ViewBag.SocialLinks as List<SocialLink>;
+    Setting setting = ViewBag.Setting as Setting;
+}
+
+<!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
@@ -60,27 +65,21 @@
     <div class="header_topbar">
         <!-- Logo -->
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-between">
                 <div class="header_top_left">
                     <ul class="header_socil list-inline pull-left">
-                        <li>
-                            <a href="#" class="fa fa-facebook"></a>
-                        </li>
-                        <li>
-                            <a href="#" class="fa fa-twitter"></a>
-                        </li>
-                        <li>
-                            <a href="#" class="fa fa-linkedin"></a>
-                        </li>
-                        <li>
-                            <a href="#" class="fa fa-google-plus"></a>
-                        </li>
+                        @foreach (var sl in socialLinks)
+                        {
+                            <li>
+                                <a href="@sl.Url" target="_blank" class="fa fa-@sl.Icon"></a>
+                            </li>
+                        }
                     </ul>
                 </div>
                 <div class="header_top_right list-unstyled">
                     <ul>
-                        <li><i class="fa fa-envelope"></i>info@example.com</li>
-                        <li><i class="fa fa-phone"></i>+234 567 234 875</li>
+                        <li><i class="fa fa-envelope"></i>@setting.Email</li>
+                        <li><i class="fa fa-phone"></i>@setting.HeaderPhone</li>
                     </ul>
                 </div>
             </div>
@@ -93,7 +92,7 @@
             <div class="row">
                 <div class="logo col-xs-8 col-sm-2">
                     <a href="@Url.Action("index","home")">
-                        <img class="img-responsive" src="~/Public/images/logo.png" alt="">
+                        <img class="img-responsive" src="~/Uploads/@setting.Logo" alt="">
                     </a>
                 </div>
                 <div class="col-sm-10">
