@@ -1,0 +1,26 @@
+﻿@model Blog
+@using System.Text.RegularExpressions;
+
+@{
+    string desc = Regex.Replace(Model.Text, "<.*?>", string.Empty);
+    desc = desc.Length > 100 ? desc.Substring(0, 100) : desc;
+
+}
+<div class="blog_box">
+    <a class="blog_box_ovrlay" href="@Url.Action("details","news",new {  slug = Model.Slug })">
+        <img class="img-responsive" src="~/Uploads/@Model.Photo" alt="@Model.Title">
+    </a>
+    <div class="blog_info_right">
+        <a href="@Url.Action("details","news",new {  slug = Model.Slug })">
+            <h3>@Model.Title </h3>
+        </a>
+        <div class="blog_post_date">
+            <span>@Model.Date.ToString("MMMM dd, yyyy")</span>
+        </div>
+        <p>@desc ...</p>
+        <span class="blog_read">
+            <a href="@Url.Action("details","news",new {  slug = Model.Slug })">Read more</a>
+            <i class="icon-right-open"></i>
+        </span>
+    </div>
+</div>

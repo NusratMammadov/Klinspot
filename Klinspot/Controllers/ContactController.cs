@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Klinspot.Models;
+using Klinspot.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,23 @@ namespace Klinspot.Controllers
         // GET: Contact
         public ActionResult Index()
         {
-            return View();
+            ContactPage model = new ContactPage
+            {
+                PageHeader = new PageHeader
+                {
+                    Name = "Contact us",
+                    BackgroundPhoto = "header.jpg",
+                    Breadcrumbs = new Dictionary<string, string>
+                    {
+                        { "Home", Url.Action("index", "home") },
+                        { "Contact us", null }
+                    }
+                },
+                Setting = ViewBag.Setting as Setting,
+                SocialLinks = ViewBag.SocialLinks as List<SocialLink>
+            };
+
+            return View(model);
         }
     }
 }

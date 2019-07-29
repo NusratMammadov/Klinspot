@@ -1,10 +1,11 @@
-﻿
+﻿@model ServiceListPage
+
 @{
     ViewBag.Title = "Index";
 }
 
 @{
-    Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml");
-    Html.RenderPartial("~/Views/Shared/_ServicesList.cshtml");
-    Html.RenderPartial("~/Views/Shared/_PriceList.cshtml");
+    Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml",model:Model.PageHeader);
+    Html.RenderPartial("~/Views/Shared/_ServicesList.cshtml",model:Model.Services);
+    Html.RenderPartial("~/Views/Shared/_PriceList.cshtml",model:Model.Packages);
 }

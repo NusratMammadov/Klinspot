@@ -1,10 +1,10 @@
-﻿
+﻿@model NewsListPage
 @{
     ViewBag.Title = "Index";
 }
 
 @{
-    Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml");
+    Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml",model:Model.PageHeader);
 }
 <!-- Start : Blog Page Content
 ==================================================-->
@@ -14,133 +14,32 @@
             <!-- Blog Area -->
             <div class="col-lg-12 col-xs-12 blog-area">
                 <div class="row">
-                    <div class="col-lg-4 col-xs-12">
-                        <div class="blog_box">
-                            <a class="blog_box_ovrlay" href="blog.html">
-                                <img class="img-responsive" src="~/Public/images/blog1.jpg" alt="">
-                            </a>
-                            <div class="blog_info_right">
-                                <a href="blog.html">
-                                    <h3>Benefits of summer cleaning tips how to clean office </h3>
-                                </a>
-                                <div class="blog_post_date">
-                                    <span>August 6, 2019</span>
-                                </div>
-                                <p>There are many cons ectet a ur elit at. Vest ibulum necod ios suspe age a to ndise after cursus mal at to there suada facime ...</p>
-                                <span class="blog_read"><a href="blog.html">Read more</a><i class="icon-right-open"></i></span>
-                            </div>
+                    @foreach (var blog in Model.Blogs)
+                    {
+                        <div class="col-lg-4 col-xs-12">
+                            @{
+                                Html.RenderPartial("~/Views/Shared/_BlogItem.cshtml", model: blog);
+                            }
                         </div>
-                    </div>
-                    <!--/ Blog Item 1 -->
-                    <div class="col-lg-4 col-xs-12">
-                        <div class="blog_box">
-                            <a class="blog_box_ovrlay" href="blog.html">
-                                <img class="img-responsive" src="~/Public/images/blog2.jpg" alt="">
-                            </a>
-                            <div class="blog_info_right">
-                                <a href="blog.html">
-                                    <h3>Benefits of summer cleaning tips how to clean office </h3>
-                                </a>
-                                <div class="blog_post_date">
-                                    <span>August 6, 2019</span>
-                                </div>
-                                <p>There are many cons ectet a ur elit at. Vest ibulum necod ios suspe age a to ndise after cursus mal at to there suada facime ...</p>
-                                <span class="blog_read"><a href="blog.html">Read more</a><i class="icon-right-open"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/ Blog Item 2 -->
-                    <div class="col-lg-4 col-xs-12">
-                        <div class="blog_box">
-                            <a class="blog_box_ovrlay" href="blog.html">
-                                <img class="img-responsive" src="~/Public/images/blog3.jpg" alt="">
-                            </a>
-                            <div class="blog_info_right">
-                                <a href="blog.html">
-                                    <h3>Benefits of summer cleaning tips how to clean office </h3>
-                                </a>
-                                <div class="blog_post_date">
-                                    <span>August 6, 2019</span>
-                                </div>
-                                <p>There are many cons ectet a ur elit at. Vest ibulum necod ios suspe age a to ndise after cursus mal at to there suada facime ...</p>
-                                <span class="blog_read"><a href="blog.html">Read more</a><i class="icon-right-open"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/ Blog Item 3 -->
-                    <div class="col-lg-4 col-xs-12">
-                        <div class="blog_box">
-                            <a class="blog_box_ovrlay" href="blog.html">
-                                <img class="img-responsive" src="~/Public/images/blog1.jpg" alt="">
-                            </a>
-                            <div class="blog_info_right">
-                                <a href="blog.html">
-                                    <h3>Benefits of summer cleaning tips how to clean office </h3>
-                                </a>
-                                <div class="blog_post_date">
-                                    <span>August 6, 2019</span>
-                                </div>
-                                <p>There are many cons ectet a ur elit at. Vest ibulum necod ios suspe age a to ndise after cursus mal at to there suada facime ...</p>
-                                <span class="blog_read"><a href="blog.html">Read more</a><i class="icon-right-open"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/ Blog Item 4 -->
-                    <!--/ Blog Item 2 -->
-                    <div class="col-lg-4 col-xs-12">
-                        <div class="blog_box">
-                            <a class="blog_box_ovrlay" href="blog.html">
-                                <img class="img-responsive" src="~/Public/images/blog2.jpg" alt="">
-                            </a>
-                            <div class="blog_info_right">
-                                <a href="blog.html">
-                                    <h3>Benefits of summer cleaning tips how to clean office </h3>
-                                </a>
-                                <div class="blog_post_date">
-                                    <span>August 6, 2019</span>
-                                </div>
-                                <p>There are many cons ectet a ur elit at. Vest ibulum necod ios suspe age a to ndise after cursus mal at to there suada facime ...</p>
-                                <span class="blog_read"><a href="blog.html">Read more</a><i class="icon-right-open"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/ Blog Item 3 -->
-                    <div class="col-lg-4 col-xs-12">
-                        <div class="blog_box">
-                            <a class="blog_box_ovrlay" href="blog.html">
-                                <img class="img-responsive" src="~/Public/images/blog1.jpg" alt="">
-                            </a>
-                            <div class="blog_info_right">
-                                <a href="blog.html">
-                                    <h3>Benefits of summer cleaning tips how to clean office </h3>
-                                </a>
-                                <div class="blog_post_date">
-                                    <span>August 6, 2019</span>
-                                </div>
-                                <p>There are many cons ectet a ur elit at. Vest ibulum necod ios suspe age a to ndise after cursus mal at to there suada facime ...</p>
-                                <span class="blog_read"><a href="blog.html">Read more</a><i class="icon-right-open"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/ Blog Item 4 -->
+                    }
 
+                    @if (Model.TotalPage != 1)
+                    {
                     <div class="col-lg-12 col-xs-12">
                         <nav class="pagination">
                             <ul class="pager">
-                                <li class="pagi-big">
-                                    <a href="#">01</a>
-                                </li>
-                                <li>
-                                    <a href="#">02</a>
-                                </li>
-                                <li>
-                                    <a href="#">03</a>
-                                </li>
+                                @for (int i = 0; i < Model.TotalPage; i++)
+                                {
+                                    <li class="@((i + 1) == Model.ActivePage ? "pagi-big" : "")">
+                                        <a href="@Url.Action("index", "news", new { page = (i + 1) })">@(i + 1)</a>
+                                    </li>
+                                }
                             </ul>
                         </nav>
                     </div>
+                    }
                 </div>
-            </div>
+                    </div>
             <!--/ Blog Area -->
         </div>
     </div>

@@ -1,0 +1,52 @@
+﻿@model ServiceDetailsPage
+@{
+    ViewBag.Title = "Details";
+}
+@{
+    Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml", model: Model.PageHeader);
+}
+
+<div class="single_service">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-xs-12">
+                <div class="single_service_left">
+                    <img class="sng_service_img" src="~/Uploads/@Model.Service.Photo" alt="@Model.Service.Name">
+                    <h4>Cleaning  Company offers a full range of daily services</h4>
+                    @Html.Raw(Model.Service.Text)
+                </div>
+                
+                <!-- End: row -->
+            </div>
+            <!-- End: column -->
+            <div class="col-lg-4 col-sm-12">
+                <div class="single_service_right">
+                    @if (Model.Service.Pdf != null || Model.Service.Doc != null)
+                    {
+                        <div class="download_brochur">
+                            <h4>Downloads </h4>
+                            <p>Loren ipsum dolor cons ectetur adip iscing elit sed do eiu smod tempor </p>
+                            <ul class="files">
+                                @if (Model.Service.Pdf != null)
+                                {
+                                    <li>
+                                        <a href="@Url.Action("download","services",new { id=Model.Service.Id,type="pdf" })"><span class="fa fa-file-pdf-o"></span> Download as pdf</a>
+                                    </li>
+                                }
+                                @if (Model.Service.Doc != null)
+                                {
+                                    <li>
+                                        <a href="@Url.Action("download","services",new { id=Model.Service.Id,type="doc" })"><span class="fa fa-file-word-o"></span> Download as doc</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- End: column -->
+        </div>
+        <!-- End: row -->
+    </div>
+    <!-- End: container -->
+</div>

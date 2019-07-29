@@ -1,0 +1,56 @@
+﻿@model NewsDetailsPage
+@{
+    ViewBag.Title = "Details";
+}
+
+@{
+    Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml", model: Model.PageHeader);
+}
+
+
+    <div class="blog_container no-padding single_blog_container">
+        <div class="container">
+            <div class="row">
+                <!-- Blog Area -->
+                <div class="col-lg-10 offset-lg-1 col-xs-12 blog-area">
+                    <div class="blog-post-list wow fadeInLeft animated" data-wow-delay="0.3s" style="visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;">
+                        <div class="blog_box">
+                            <a class="blog_box_ovrlay" href="#">
+                                <img class="img-responsive" src="~/Uploads/@Model.Blog.Photo" alt="">
+                            </a>
+                            <div class="blog_info_right">
+                                <div class="blog_post_date">
+                                    <span><i class="icon-glyph-284"></i> @Model.Blog.Date.ToString("MMMM dd, yyyy")</span>
+                                </div>
+
+                                <h3>@Model.Blog.Title</h3>
+
+                                @Html.Raw(Model.Blog.Text)
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ article -->
+                    <div class="post-option clearfix">
+                        @if (Model.PrevUrl != null)
+                        {
+                            <div class="pull-left">
+                                <a href="@Model.PrevUrl" class="prev-post"><span class="arrow-icon arrow_carrot-left"></span> &nbsp;PREV POST</a>
+                            </div>
+                        }
+
+                        <span class="middle-icon"><a href="@Url.Action("index","news")" class="icon_grid-3x3"></a></span>
+
+                        @if (Model.NextUrl != null)
+                        {
+                            <div class="pull-right">
+                                <a href="@Model.NextUrl" class="next-post">NEXT POST &nbsp;<span class="arrow-icon arrow_carrot-right"></span></a>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+                <!--/ Blog Area -->
+            </div>
+        </div>
+        <!-- Container /- -->
+    </div>

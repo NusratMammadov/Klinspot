@@ -1,12 +1,12 @@
-﻿
+﻿@model AboutPage
 @{
     ViewBag.Title = "Index";
 }
 
 @{
-    Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml");
-    Html.RenderPartial("~/Views/Shared/_AboutText.cshtml");
-    Html.RenderPartial("~/Views/Shared/_TeamMembers.cshtml");
-    Html.RenderPartial("~/Views/Shared/_Testimonial.cshtml");
-    Html.RenderPartial("~/Views/Shared/_Partners.cshtml");
+    Html.RenderPartial("~/Views/Shared/_PageHeader.cshtml",model:Model.PageHeader);
+    Html.RenderPartial("~/Views/Shared/_AboutText.cshtml",model:Model.AboutText);
+    Html.RenderPartial("~/Views/Shared/_TeamMembers.cshtml",model:Model.Members);
+    Html.RenderPartial("~/Views/Shared/_Testimonial.cshtml",model:Model.Clients);
+    Html.RenderPartial("~/Views/Shared/_Partners.cshtml",model:Model.Partners);
 }

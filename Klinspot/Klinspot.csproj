@@ -228,7 +228,14 @@
     <Compile Include="Models\Slide.cs" />
     <Compile Include="Models\SocialLink.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AboutPage.cs" />
+    <Compile Include="ViewModels\ContactPage.cs" />
     <Compile Include="ViewModels\Homepage.cs" />
+    <Compile Include="ViewModels\NewsDetailsPage.cs" />
+    <Compile Include="ViewModels\NewsListPage.cs" />
+    <Compile Include="ViewModels\PageHeader.cs" />
+    <Compile Include="ViewModels\ServiceDetailsPage.cs" />
+    <Compile Include="ViewModels\ServiceListPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -258,6 +265,9 @@
     <Content Include="Views\Shared\_ServicesList.cshtml" />
     <Content Include="Views\Shared\_PriceList.cshtml" />
     <Content Include="Views\Shared\_PageHeader.cshtml" />
+    <Content Include="Views\Shared\_BlogItem.cshtml" />
+    <Content Include="Views\Services\Details.cshtml" />
+    <Content Include="Views\News\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -268,7 +278,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201907251632536_Init.resx">
