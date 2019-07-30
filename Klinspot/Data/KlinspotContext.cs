@@ -27,5 +27,7 @@ namespace Klinspot.Data
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Slide> Slides { get; set; }
         public DbSet<SocialLink> SocialLinks { get; set; }
+
+        public DbSet<Admin> Admins { get; set; }
     }
 }

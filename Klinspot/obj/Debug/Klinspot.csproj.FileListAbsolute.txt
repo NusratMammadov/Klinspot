@@ -79,3 +79,5 @@ C:\Users\Yolchu Nasib\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.csproj.G
 C:\Users\Yolchu Nasib\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.Migrations.DescAddToServices.resources
 C:\Users\Yolchu Nasib\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.Migrations.TextAddToAboutText.resources
 C:\Users\Yolchu Nasib\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.Migrations.PhotosChangedInAboutText.resources
+C:\Users\Yolchu Nasib\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.Migrations.AdminAdded.resources
+C:\Users\Yolchu Nasib\source\repos\Klinspot\Klinspot\obj\Debug\Klinspot.Migrations.AdminAdded2.resources
